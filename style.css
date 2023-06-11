@@ -1,0 +1,255 @@
+
+/* You can either copy the below and paste it between style tags on your HTML page, OR you can copy this to a file and name it .css and link it from your HTML page. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: Set a default box-sizing value */
+html {
+  box-sizing: border-box;
+}
+
+/* Optional: Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+:root {
+    --header-bg:#F1F1F1;
+    --nav-bg:#F2F2F2;
+    --article-bg:#EDEDEF;
+    --border-color:#E0E0E0;
+    --sidebar-text-color:#6F7A79;
+    --article-text-color:#625F5F;
+    --article-heading-color:#929292;
+    --nav-link-color:#5f758c;
+    --darker-border-color:#C6C6C6;
+  }
+  html, body {
+    padding:0;
+    margin:0;
+  }
+
+ 
+ 
+  body {
+    font-size: 12px;
+    background-image: url("bgif025.gif");
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+  }
+  body a {
+    color:var(--nav-link-color);
+  }
+  
+  aside {
+    width:250px;
+    margin-top:30px;
+  }
+
+  .flex {
+    display:flex;
+    max-width:900px;
+  }
+
+  header, nav {
+    max-width: 100%;
+  }
+  nav {
+      /*the navbar basically*/
+    height:auto;
+    margin-bottom:10px;
+    background-color:var(--nav-bg);
+  }
+
+
+  /*
+    CSS FOR CENTERING NAVBAR ITEMS
+    .navbarItems{
+	    margin:auto;
+    }
+
+    .navbarItems li{
+        display: inline-block;
+    }
+
+  */
+  .navItems {
+      /*the navbar list basically*/
+      margin: auto;
+      display: flex;
+      justify-content: center;
+   
+   
+  }
+  .navItems li {
+    display:inline-block;
+    padding-right: 30px;
+    
+    
+  }
+  .navItems li a {
+    text-decoration:none;
+    text-transform:uppercase;
+    color:var(--nav-link-color);
+  }
+ 
+
+  header {
+    max-height:100px;
+    height:100px;
+    background-color:var(--article-bg);
+    
+    
+    border:1px solid var(--darker-border-color);
+    max-width:898px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  
+    main {
+      width: 100%;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+  section {
+    margin-bottom:10px;
+    color:var(--sidebar-text-color);
+  }
+  article { 
+    border:1px solid var(--darker-border-color);
+    margin-bottom:15px;
+    background-color:var(--article-bg);
+    color:var(--article-text-color);
+    padding:10px;
+  }
+  .subtitle {
+    border:1px solid var(--darker-border-color);
+    background-color:var(--nav-bg);
+  }
+  .links {
+    list-style-type:none;
+    padding-left:0;
+  }
+  .links li {
+    background-color:var(--nav-bg);
+    border:1px solid var(--border-color);
+    margin-bottom:3px;
+  }
+  .links li a {
+    text-decoration:none;
+    color:inherit;
+  }
+  
+
+  .left-sidebar, .right-sidebar {
+    margin: 20px auto;
+  }
+
+  .left-sidebar {
+
+    background-color: var(--article-bg); 
+    border:1px solid var(--darker-border-color);
+  }
+
+  .right-sidebar {
+  
+    background-color: var(--article-bg); 
+    border:1px solid var(--darker-border-color);
+  }
+
+  .subtitle {
+    color:var(--article-text-color);
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  article .subtitle {
+    text-transform:uppercase;
+    font-size:16px;
+    color:var(--article-heading-color);
+    margin-top:10px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:10px;
+    
+  }
+  nav {
+    border:2px solid var(--darker-border-color);
+    border-left:none;
+    border-right:none;
+  }
+  footer {
+    max-width:800px;
+    text-align:center;
+    color:var(--sidebar-text-color);
+  }
+  footer a{
+    color:var(--navbar-link-color);
+  }
+
+  .buttons {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    height: 10vh; /* Adjust this value based on your needs */
+  }
+  
+  .image-wrapper {
+    margin: 10px; /* Adjust this value based on your needs */
+  }
+
+  .iframe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh; /* Adjust the height as needed */
+  }
+
+  .indexHeader{
+    background-image: url("");
+    background-size: 100% 100%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .flex {
+      flex-wrap:wrap;
+    }
+    aside {
+      display:flex;
+      width:100%;
+      margin-left:20px;
+      margin-right:20px;
+    }
+    aside > section {
+      margin-right:10px;
+    }
+    .nav {
+      margin-left:0 !important;
+      margin-right:50px;
+    }
+    .nav li {
+      padding-bottom:5px;
+    }
+
+  .moon{
+    top: -1460px;
+    left: 1157px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    position: relative;
+  }
+
+ 
+ 
+  
+}
