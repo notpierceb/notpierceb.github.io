@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <title>retro website</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <script type="text/javascript">
+          // <![CDATA[
+          var colour="#000"; // change the colour of the clock
+          var clock_size=8; // change the size of the clock (range is from 4 to as big as you like!)
+          
+          /****************************
+          *    Digital Clock Effect   *
+          *(c)2005-7 mf2fm web-design *
+          *  http://www.mf2fm.com/rv  *
+          * DON'T EDIT BELOW THIS BOX *
+          ****************************/
+          var clok;
+          var cpos=0;
+          var newx=xmo=400;
+          var newy=ymo=300;
+          window.onload=function() { if (document.getElementById) {
+            clok=document.createElement("div");
+            clok.style.position="absolute";
+            clok.appendChild(createDigit("dig0"));
+            clok.appendChild(createDigit("dig1"));
+            clok.appendChild(createColon());
+            clok.appendChild(createDigit("dig2"));
+            clok.appendChild(createDigit("dig3"));
+            clok.appendChild(createColon("ms"));
+            clok.appendChild(createDigit("dig4"));
+            clok.appendChild(createDigit("dig5"));
+            document.body.appendChild(clok);
+            tick();
+          }}
+          
+          var digit=new Array(247, 146, 221, 219, 186, 235, 239, 210, 255, 251);
+          
+          function tick() {
+            var now=new Date();
+            var t=Math.floor(now.getTime()/500)%2;
+            var i, j, k;
+            var won=oo(now.getHours())+oo(now.getMinutes())+oo(now.getSeconds());
+            for (i=0; i<6; i++) for (j=0; j<7; j++) {
+            k=digit[won.substring(i, i+1)].toString(2).substring(j+1, j+2);
+            document.getElementById("dig"+i+j).style.backgroundColor=(k==1)?colour:"transparent";
+            }
+            document.getElementById("mstop").style.backgroundColor=(t)?"transparent":colour;
+            document.getElementById("msbot").style.backgroundColor=(t)?"transparent":colour;
+            xmo+=Math.floor((newx-xmo)/4);
+            clok.style.left=Math.round(xmo-(clock_size+2)*4)+"px";
+            ymo+=Math.floor((newy-ymo)/4);
+            clok.style.top=Math.round(ymo-clock_size*2.5)+"px";
+            setTimeout("tick()", 40);
+          }
+          
+          document.onmousemove=mouse;
+          
+          function mouse(e) {
+            newy=(e)?e.pageY:event.y+scro();
+            newx=(e)?e.pageX:event.x;
+          }
+          
+          function scro() {
+            var scro=0;
+            if (document.body.scrollTop) scro=document.body.scrollTop;
+            else if (document.documentElement && document.documentElement.scrollTop) scro=document.documentElement.scrollTop;
+            return (scro);
+          }
+          
+          function oo(o) { return(((o<10)?"0"+o:o).toString()); }
+          
+          function createDigit(id) {
+            var odiv=createDiv(0, cpos, clock_size+clock_size+2, clock_size+2, false);
+            cpos+=clock_size+4;
+            odiv.appendChild(createDiv(0, 1, 2, clock_size, id+"0"));
+            odiv.appendChild(createDiv(1, 0, clock_size, 2, id+"1"));
+            odiv.appendChild(createDiv(1, clock_size, clock_size, 2, id+"2"));
+            odiv.appendChild(createDiv(clock_size, 1, 2, clock_size, id+"3"));
+            odiv.appendChild(createDiv(clock_size+1, 0, clock_size, 2, id+"4"));
+            odiv.appendChild(createDiv(clock_size+1, clock_size, clock_size, 2, id+"5"));
+            odiv.appendChild(createDiv(clock_size+clock_size, 1, 2, clock_size, id+"6"));
+            return (odiv);
+          }
+          
+          function createColon(id) {
+            var odiv=createDiv(0, cpos, clock_size+clock_size+2, 2, false);
+            cpos+=4;
+            var dot1=createDiv(4, 0, 3, 2, (id)?id+"top":false);
+            dot1.style.backgroundColor=colour;
+            odiv.appendChild(dot1);
+            var dot2=createDiv(clock_size+clock_size-5, 0, 3, 2, (id)?id+"bot":false);
+            dot2.style.backgroundColor=colour;
+            odiv.appendChild(dot2);
+            return (odiv);
+          }
+          
+          function createDiv(top, left, height, width, id) {
+            var div=document.createElement("div");
+            div.style.position="absolute";
+            div.style.top=top+"px";
+            div.style.left=left+"px";
+            div.style.height=height+"px";
+            div.style.width=width+"px";
+            div.style.overflow="hidden";
+            if (id) div.setAttribute("id", id);
+            return (div);
+          }
+          // ]]>
+          </script>
+       
+    </head>
+    <body id = animGifBody>
+      
+    
+
+      <div class="container">
+            <header class = "indexHeader">
+                <div class = "subtitle"><h1>PierceB.online</h1></div>
+                <div class = "subtitle"><h5>Just because someone listens to The Smiths does NOT mean they are manipulative.. will I manipulate you? yes.. but its NOT because I listen to The Smiths..</h6></div>
+                
+            
+            </header>
+
+            <nav class = "flex">
+                <ul class="navItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">Guitar Covers</a></li>
+                    <li><a href="minecraft.html">Minecraft Builds</a></li>
+                    <li><a href="#">SPACE STUFF</a></li>
+                    <li><a href="#">Side Projects</a></li>
+                    <li><a href="#">Essays</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex">
+                
+                   
+              <aside class="left-sidebar">
+                  <section>
+                    <div class="subtitle">The FUCK should I put here?</div>
+                    <img src = "https://99gifshop.neocities.org/items/11/silverfairy.gif" width = "168" height = "168">
+                  </section>
+                  <section>
+                  <div class="subtitle">Just Good Songs ♫♫</div>          <ul class="links">
+                      <li><a href="https://www.youtube.com/watch?v=nlVA_e6WQhw">Sigur Rós - Hoppípolla & Með blóðnasir</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=6ZZghJG0d0E">Backseat Lovers - Kilby Girl</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=RRKJiM9Njr8">My Chemical Romance - Welcome to the Black Parade</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=QkeehQ8D_VM">Clairo - Hello?</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=OuZhNN9KRV8">Mayhem - Chainsaw Gutsfuck</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=QI8VrXkffcg">Cigarettes After Sex - Nothing's Gonna Hurt You Baby</a></li>
+                      
+                  </ul>
+                      
+                  </section>
+                  <section>
+                  <div class="subtitle">Minecraft builds built by my friends and I</div>
+                              <ul class="links">
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                  </ul>
+                  </section>
+              </aside>
+              
+              <main>
+                  <article>
+                    <div class="subtitle">Nice to meet you! </div>
+                
+                    <p>
+                      Welcome to my website!!!! 
+                      Whether you're from Europe, America, or wherever, you can always come to my small chunk of the internet. 
+                      <img class="computergif" src="computer-01.gif" alt="Computer GIF" style="float: left; margin-right: 10px;">
+                      <br>
+                      
+                      <br>
+                        WELCOME to my small tribute to the vibrant internet of the past. :)
+                
+                        <br>
+                        <br>
+                        I love the internet, but I dislike how over time, its focus shifted from a place of vibrant personal expression to being sorta bland. So basically the motivator for creating this site is so I could be unique and hipster.  
+                        <br>
+
+                        <br>
+                        Anyways, more about me, I'm Pierce! On a good day, you might find me eating junk food, snail breeding, trying to fish at my local aquarium, competetive beetle fighting, and ghost hunting. I am a second year computer science student, and I also love playing my guitar.
+                        <br>
+                        <br>
+                        On my endlessly under-construction website, you might find anything related to me and my hobbies, such as music, space stuff, side projects, nd random thoughts about things.
+                    </p>
+                   
+                  
+                  </article>
+
+                  <article> 
+                    <div class="subtitle">WHERE I LIKE HANGIN OUT</div>
+                    <div><p>We all have our favourite places.. Here is a list + description of mine..</p></div>
+                      <ul class="bordered-list">
+                        <li>Secret a <a href="https://flic.kr/p/2ozNXp1">pond</a> in my local park</li> 
+                        <li>Wilson Creek, British Columbia - theres a big ass waterfall at the end of the hike.</li>
+                        <li>Stanley Park, Vancouver</li>
+                        <li>my local <a href=" https://youtu.be/2xuH-2hGmMY">skatepark</a> (before I broke my shoulder)</li>
+                        <li>NOT kingston, ontario </li>
+                        <li>eating doritos and dew in my room</li>
+                        <marquee style = "border: 3px black;"> <img src = "images/helicopter.gif">FUCK ONTARIO</marquee>
+                      </ul>
+                  </article>
+                    
+                  <article>
+                    <div class="subtitle">Books corner?</div>
+                    <div>
+                      <p>Not a very big reader but I do enjoy a fun novel every now and then! Here are my recommendations..</p>
+                      <ul class="bordered-list">
+                        <li>The Golden Compass by Phillip Pullman - Easy page turner read, and the ending was amazing.</li>
+                        <li>The Girl on the train by Paula Hawkins - Murder mystery from the perspective of an unreliable narrator.</li>
+                        <li>If It Bleeds by Stephen King - 3 unconventional and thought-provoking horror novellas></li>
+                        <li>Hitchhiker's Guide to the Galaxy by Douglas Adams - funny alien book.</li>
+                      </ul> 
+                    </div>
+                </article>
+              </main>
+
+              <aside class="right-sidebar">
+                <section>
+                  <div class="subtitle">space fill</div>          
+                    <img src="pngwing.com.png" alt="Marble Statue Vaporwave" width = "169" height = "328">
+                </section>
+                
+                  <section>
+                  <div class="subtitle">websites directory</div>          <ul class="links">
+                      <li><a href="https://cinni.net/?z=/web">Cinni's Dream World</a></li>
+                      <li><a href="https://melonking.net/">Melon King</a></li>
+                      <li><a href="https://fauux.neocities.org/">Spooky</a></li>
+                      <li><a href="https://mrdoob.neocities.org/028/">Cool renders</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                  </ul></section>
+                  <section>
+                
+                  <section>
+                    <div class="subtitle">rating of my first year classes</div>
+                    <div><p>Discrete Math - 10/10</p></div>
+                    <div><p>Comp sci 121 - 6/10</p></div>
+                    <div><p>Calculus - 8/10 </p></div>
+                    <div><p>Ancient Warfare - 9/10</p></div>
+                    <div><p>Greek Civ - 10/10</p></div>
+                    <div><p>Comp sci 124 - 10/10</p></div>
+                    <div><p>Lin alg 112 - 7/10</p></div>
+                  </section>
+                    
+                </section>
+              </aside>
+
+              
+            </div>
+
+         
+           
+            <div class="buttons">
+             
+              <div class="image-wrapper">
+                <img src="https://ranfren.neocities.org/made_with_windows.gif" alt="Image 2">
+              </div>
+              <div class="image-wrapper">
+                <img src="https://vaje.neocities.org/murder.jpg" alt="Image 3">
+              </div>
+              <div class="image-wrapper">
+                <img src="https://y2k.neocities.org/buttons/tumblr_inline_p0bn5yiKsp1ty2vf6_500.gif" alt="Image 3">
+              </div>
+              <div class="image-wrapper">
+                <img src="https://vaje.neocities.org/lainbutton.gif" alt="Image 3">
+              </div>
+              <div class="image-wrapper">
+                <img src="https://buttonwall.neocities.org/ns4now.gif" alt="Image 3">
+              </div>
+              <div class="image-wrapper">
+                <img src="https://odditycommoddity.neocities.org/Images/Buttons/pureevil.gif" alt="Image 3">
+              </div>
+           
+            </div>	
+
+            <div class = "iframe">
+              <iframe width="314" height="314" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Artemis&dob=1684998606&gender=m&element=Fire&pet=cat.gif&map=https%3A%2F%2Fcinni.net%2Fimages%2Fweb%2Fwallpaper%2Ftumblr_nfb5feDkEB1smolw8o1_500.jpg&background=https%3A%2F%2Fcinni.net%2Fimages%2Fweb%2Fbg%2Fa2.jpg&tablecolor=black&textcolor=black" frameborder="0"></iframe>
+            </div>
+        
+
+        
+            <article>
+              <footer style="text-align: center;">© Pierceb.online 2022 — All wrongs reserved</footer>
+            </article>
+
+            <audio autoplay loop><source src = "cigsafter.mp3" type = "audio/mpeg"></audio>
+      </div>
+
+            
+
+    </body>
+
+
+
+</html>
