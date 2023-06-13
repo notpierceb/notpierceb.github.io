@@ -1,5 +1,5 @@
 // Fetch data from NASA API
-fetch('https://api.nasa.gov/planetary/apod?api_key=pNg09DCWUS5S7iHkQF8uNhAjppC8PcCInwm3AlgH')
+fetch('https://api.nasa.gov/planetary/apod?api_key=I9jyxb3gF8cjbgGWFWkej5EnlyRgZ89rqwMhvelr')
   .then(response => response.json())
   .then(data => {
     // Set image source

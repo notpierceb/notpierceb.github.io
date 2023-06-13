@@ -15,6 +15,13 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  font-size: 12px;
+  /*background-image: url("bgif025.gif");*/
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+}
 
 :root {
     --header-bg:#F1F1F1;
@@ -33,14 +40,14 @@ html {
   }
 
  
- 
   body {
     font-size: 12px;
-    background-image: url("bgif025.gif");
+    /*background-image: url("bgif025.gif");*/
     max-width: 1000px;
     margin: auto;
     display: flex;
   }
+  
   body a {
     color:var(--nav-link-color);
   }
@@ -202,6 +209,12 @@ html {
     justify-content: center;
     height: 10vh; /* Adjust this value based on your needs */
   }
+
+  .bordered-list li {
+     /* Set the left border width and color */
+
+    list-style-position: inside;
+  }
   
   .image-wrapper {
     margin: 10px; /* Adjust this value based on your needs */
@@ -218,6 +231,39 @@ html {
     background-image: url("");
     background-size: 100% 100%;
   }
+
+
+  #animGifBody {
+
+
+    background-image: url('images/running.gif'); 
+    background-size: contain;
+
+   
+    background-size: contain;
+    animation: animatedBackground 60s ease-in-out infinite;
+    animation-duration: 60s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: animatedBackground;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    font-weight: normal;
+}
+
+/*@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10000% 0;
+  }
+}*/
+
 
   @media only screen and (max-width: 800px) {
     .flex {
