@@ -287,16 +287,11 @@ body {
       padding-bottom:5px;
     }
 
-  .moon{
-    top: -1460px;
-    left: 1157px;
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    position: relative;
-  }
+  
 
- 
+    #animGifBody {
+      background-size: contain; /* Adjust background-size to contain */
+    }
  
   
 }
