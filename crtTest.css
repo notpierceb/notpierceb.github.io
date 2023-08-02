@@ -1,0 +1,32 @@
+/* CSS code for the scrolling CRT monitor effect */
+@keyframes crt-flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+      transform: translateX(2px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  body {
+    background-color: #000; /* Set the background color to black to mimic the monitor's dark screen */
+    color: #0f0; /* Set the text color to green, similar to old monitors */
+    font-family: "Courier New", monospace; /* Use a monospaced font to resemble the old CRT text */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide content that may overflow the screen */
+  }
+  
+  /* Apply the CRT flickering animation to specific elements */
+  .crt-flicker {
+    animation: crt-flicker 0.1s infinite;
+  }
+  
+  /* Add some text elements with the flickering effect */
+  /* You can add more elements with the class 'crt-flicker' to other parts of your HTML */
+  /* For example, you can use <h1>, <p>, or <div> tags with this class. */
+  /* Make sure to add the class 'crt-flicker' to apply the animatio

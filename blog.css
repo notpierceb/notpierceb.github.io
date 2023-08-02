@@ -1,5 +1,5 @@
 body {
-    background:url("images/d1aehdnbq0h21-wallpaper.png");   /*Replace with your own background*/
+    background:url("images/ocback6.gif");   /*Replace with your own background*/
  
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,10 +26,10 @@ body {
     
   /*Code shared by all window-style boxes. To see what different specific sidebar classes look like, check the demo page.*/
   .sidebar, .mini-sidebar, .wide-sidebar, .box {
-    background: #dff7d5;
+    background: #EDEDEF;
     border-radius: 5px;
-    border: 1px solid #618a50;
-    box-shadow: 2px 2px #3c5832;
+    border: 1px solid black;
+    box-shadow: 2px 2px #333333;
     }
     
   /*Prevent image overflow.*/
@@ -74,7 +74,7 @@ body {
   
   /*The title bar at the top of window boxes.*/
   .title-bar, .box-title-bar {
-    background: #7aa469;
+    background:#C6C6C6;
     color: white;
     font-weight: bold;
     padding: 5px;
@@ -115,24 +115,37 @@ body {
       text-indent: 30px;
   }
     
-  /*this part is a joke. no need to use it.*/
+  
   .big-quote {
-    font-size: 32px;
+    font-size: 50px;
     color: white;
     letter-spacing: 6px;
     word-spacing: 2px;
     font-family: "Garamond", "Bookman", serif;
     position: fixed;
     margin-left: 1150px;
-    margin-top: 475px;
+    margin-top: 375px;
     top: 0;
     width: 300px;
-    }
+
+    text-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 0, 0, 0.6),
+    0 0 70px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 0, 0, 0.6),
+    0 0 70px rgba(0, 0, 0, 0.6);
     
+    
+  }
   wide {
     letter-spacing: 16px;
     }
     
   midwide {
     letter-spacing: 3px;
-    }
+    } 
