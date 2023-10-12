@@ -18,9 +18,10 @@ html {
 body {
   font-size: 12px;
   /*background-image: url("bgif025.gif");*/
-  max-width: 1000px;
   margin: auto;
   display: flex;
+  flex-direction: column; /* Added to ensure proper centering */
+  align-items: center; /* Added to ensure proper centering */
 }
 
 :root {
