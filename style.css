@@ -202,6 +202,7 @@ body {
   }
   footer a{
     color:var(--navbar-link-color);
+    margin-top:10px;
   }
 
   .buttons {
