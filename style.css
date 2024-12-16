@@ -205,7 +205,7 @@ body {
   }
 
   .buttons {
-    margin-bottom: 20px;
+   
     display: flex;
     align-items: right;
     justify-content: center;
@@ -256,6 +256,7 @@ body {
     background-repeat: repeat-x;
     background-attachment: fixed;
     font-weight: normal;
+    margin-bottom: 10px;
 }
 
 @keyframes animatedBackground {
