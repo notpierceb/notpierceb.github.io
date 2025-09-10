@@ -11,8 +11,17 @@
     <link rel="stylesheet" href="style.css">
 
    <script src="airborne.js"></script> 
+   <link
+  rel="stylesheet"
+  href="https://unpkg.com/98.css"
+>
 
-
+<style>
+    body {
+        background-color: #008080;
+      
+    }
+  </style>
 
   </head>
 
@@ -22,6 +31,7 @@
 
   <body>
   
+     
 
    <!-- <iframe src="https://www3.cbox.ws/box/?boxid=3528130&boxtag=oyzRIX" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
 
@@ -47,59 +57,74 @@
 
     <div class = "container">
       
+<div class="window" style="width: 700px">
+  <div class="title-bar">
+    <div class="title-bar-text">A Window With Stuff In It</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class = "subtitle">
+              <h1 class = "maintitle" style="text-align: center;"><span id="airborne">MINECRAFT BUILDS</span></h1>  
+            </div>
+  </div>
+</div>
+
+     
 
       <main>
 
-          <section>
-            <div class = "subtitle">
-              <h1 class = "maintitle" style="text-align: center;"><span id="airborne">MINECRAFT BUILDS</span></h1>  
-            </div>
-          </section>
 
-          <section>
-            <article>
-              <div class="subtitle"> JJK PIXEL ART!</div>
-                    
-              <p>lorem ipsljj</p>
-              
-              <p>loremafipsislum</p>
-            </article>
-           
-          </section>
-          
-          <section>
-            <article>
-              <div class="subtitle"> RIGBY STEP!</div>
-                    
-              <p>lorem ipsljj</p>
-              
-              <p>loremafipsislum</p>
-            </article>
-           
-          </section>
-          
+       <div class="window" id="myWindow" style="margin: 32px; width: 300px; position: absolute; top: 100px; left: 100px;">
+  <div class="title-bar" id="myWindowBar">
+    <div class="title-bar-text">Draggable Win98 Window</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>Hello world, you can drag me around!</p>
+    <section class="field-row" style="justify-content: flex-end">
+      <button>OK</button>
+      <button>Cancel</button>
+    </section>
+  </div>
+</div>
 
-          <section>
-            <article>
-              <div class="subtitle"> THE HOUSE!</div>
-                    
-              <p>lorem ipsljj</p>
-              
-              <p>loremafipsislum</p>
-            </article>
-           
-          </section>
+<script>
+function makeDraggable(windowEl, handleEl) {
+  let offsetX = 0, offsetY = 0, isDown = false;
 
-          <section>
-            <article>
-              <div class="subtitle"> THE HOUSE!</div>
-                    
-              <p>lorem ipsljj</p>
-              
-              <p>loremafipsislum</p>
-            </article>
-           
-          </section>
+  handleEl.addEventListener('mousedown', (e) => {
+    isDown = true;
+    offsetX = e.clientX - windowEl.offsetLeft;
+    offsetY = e.clientY - windowEl.offsetTop;
+    document.body.style.userSelect = "none"; // prevent text highlight
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDown = false;
+    document.body.style.userSelect = "auto";
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    windowEl.style.left = (e.clientX - offsetX) + "px";
+    windowEl.style.top = (e.clientY - offsetY) + "px";
+  });
+}
+
+// usage
+makeDraggable(
+  document.getElementById("myWindow"),
+  document.getElementById("myWindowBar")
+);
+</script>
 
       </main>
 
