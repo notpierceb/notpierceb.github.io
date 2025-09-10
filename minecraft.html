@@ -53,24 +53,64 @@
   </nav>
 
 
+  <div class="desktop-icon" data-target="popupWindow1" style="position:absolute; top:50px; left:50px; cursor:pointer; text-align:center;">
+  <img src="images/file.png" width="48" height="48">
+  <p>Rigyby Step!</p>
+</div>
+
+<div class="window" id="popupWindow1" style="width:300px; position:absolute; top:150px; left:150px; display:none;">
+  <div class="title-bar" id="popupWindow1Bar">
+    <div class="title-bar-text">Popup 1</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close" class="close-button" data-window="popupWindow1"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>Content for window 1</p>
+  </div>
+</div>
+
+
+
+
+
+<div class="window" id="popupWindow" style="
+  margin: 32px; width: 300px; 
+  position: absolute; top:150px; left:150px; 
+  display:none;">
+  <div class="title-bar" id="popupWindowBar">
+    <div class="title-bar-text">My File</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close" id="closePopup"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>This is the content inside the popup window!</p>
+  </div>
+</div>
+
+
+
+
+
 
 
     <div class = "container">
       
-<div class="window" style="width: 700px">
-  <div class="title-bar">
-    <div class="title-bar-text">A Window With Stuff In It</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <div class = "subtitle">
-              <h1 class = "maintitle" style="text-align: center;"><span id="airborne">MINECRAFT BUILDS</span></h1>  
-            </div>
-  </div>
+      <div class="window" style="width: 700px">
+        <div class="title-bar">
+          <div class="title-bar-text">A Window With Stuff In It</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class = "subtitle">
+                    <h1 class = "maintitle" style="text-align: center;"><span id="airborne">MINECRAFT BUILDS</span></h1>  
+                  </div>
+        </div>
 </div>
 
      
@@ -104,7 +144,7 @@ function makeDraggable(windowEl, handleEl) {
     isDown = true;
     offsetX = e.clientX - windowEl.offsetLeft;
     offsetY = e.clientY - windowEl.offsetTop;
-    document.body.style.userSelect = "none"; // prevent text highlight
+    document.body.style.userSelect = "none";
   });
 
   document.addEventListener('mouseup', () => {
@@ -119,11 +159,29 @@ function makeDraggable(windowEl, handleEl) {
   });
 }
 
-// usage
-makeDraggable(
-  document.getElementById("myWindow"),
-  document.getElementById("myWindowBar")
-);
+// 1. Open window when an icon is clicked
+document.querySelectorAll('.desktop-icon').forEach(icon => {
+  icon.addEventListener('click', () => {
+    const targetId = icon.dataset.target;
+    const win = document.getElementById(targetId);
+    win.style.display = 'block';
+  });
+});
+
+// 2. Close window when its close button is clicked
+document.querySelectorAll('.close-button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.window;
+    const win = document.getElementById(targetId);
+    win.style.display = 'none';
+  });
+});
+
+// 3. Make each window draggable
+document.querySelectorAll('.window').forEach(win => {
+  const bar = win.querySelector('.title-bar');
+  makeDraggable(win, bar);
+});
 </script>
 
       </main>
